@@ -1,0 +1,38 @@
+# Git
+.git
+.gitignore
+
+# Documentation (not needed in container)
+README.md
+README-EAGLER.md
+README-DOCKER.md
+
+# Scripts (not needed for client container)
+scripts/
+start-eaglercraft.sh
+
+# Server files (not needed for client container)
+eagler-server/
+eagler-server.zip
+eaglercraft-server-latest.zip
+*.log
+
+# Docker files
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Temporary files
+/tmp/
+*.tmp
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
