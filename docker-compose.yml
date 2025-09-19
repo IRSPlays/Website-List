@@ -1,0 +1,27 @@
+services:
+  eaglercraft-client:
+    build: .
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    container_name: eaglercraft-wasm-gc
+    
+  # Optional: Eaglercraft server backend (uncomment to enable)
+  # eaglercraft-server:
+  #   image: openjdk:8-jre-alpine
+  #   working_dir: /app
+  #   volumes:
+  #     - ./eagler-server:/app
+  #     - ./scripts:/scripts
+  #   ports:
+  #     - "25565:25565"  # Minecraft port
+  #     - "8081:8081"    # WebSocket port for Eaglercraft
+  #   command: >
+  #     sh -c "apk add --no-cache bash curl unzip &&
+  #            /scripts/setup_eagler_server.sh &&
+  #            /scripts/run_eagler_server.sh &&
+  #            tail -f /app/eagler-server.log"
+  #   restart: unless-stopped
+  #   container_name: eaglercraft-server
+  #   depends_on:
+  #     - eaglercraft-client
